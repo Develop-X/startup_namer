@@ -15,9 +15,22 @@ class MyApp extends StatelessWidget {
         ),
         body: new Center(
           //child: const Text('Hello World'),
-          child: new Text(wordPair.asPascalCase),
+          child: new RandomWords(),
         ),
       ),
     );
+  }
+}
+
+class RandomWords extends StatefulWidget {
+  @override
+  RandomWordsState createState() => new RandomWordsState();
+}
+
+class RandomWordsState extends State<RandomWords> {
+  @override
+  Widget build(BuildContext context) {
+    final WordPair wordPair = new WordPair.random();
+    return new Text(wordPair.asPascalCase);
   }
 }
