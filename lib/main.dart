@@ -11,26 +11,12 @@ class MyApp extends StatelessWidget {
       title: 'Welcome to Flutter',
       home: new Scaffold(
         appBar: new AppBar(
-          title: const Text('Welcome to Flutter'),
+          title: new Text('Welcome to Flutter'),
         ),
         body: new Center(
-          //child: const Text('Hello World'),
-          child: new RandomWords(),
+          child: new Text(wordPair.asPascalCase),
         ),
       ),
     );
-  }
-}
-
-class RandomWords extends StatefulWidget {
-  @override
-  RandomWordsState createState() => new RandomWordsState();
-}
-
-class RandomWordsState extends State<RandomWords> {
-  @override
-  Widget build(BuildContext context) {
-    final WordPair wordPair = new WordPair.random();
-    return new Text(wordPair.asPascalCase);
   }
 }
